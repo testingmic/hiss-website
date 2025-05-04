@@ -36,7 +36,7 @@ const App = () => {
                 }}
               />
             </div>
-            <style jsx>{`
+            <style>{`
               @keyframes loadingProgress {
                 0% {
                   width: 0%;
