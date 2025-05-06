@@ -79,7 +79,10 @@ const CTASection = () => {
               {/* Content Column */}
               <div className="p-8 md:p-12">
                 <div className="space-y-6">
-                  <h2 className="text-3xl md:text-4xl font-bold text-neutral-darkest">
+                  <h2
+                    className="text-3xl md:text-4xl font-bold text-neutral-darkest"
+                    style={{ color: "#ff623e" }}
+                  >
                     Ready to Give Your Child the Best Education?
                   </h2>
 
@@ -90,7 +93,9 @@ const CTASection = () => {
                   </p>
 
                   <div className="space-y-2">
-                    <h4 className="font-semibold text-primary">
+                    <h4 className="font-semibold text-primary"
+                      style={{ color: "#ff623e" }}
+                    >
                       Why Choose HISS:
                     </h4>
                     <ul className="space-y-2">

@@ -139,7 +139,10 @@ const AboutPage = () => {
                 <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
                   Our Vision
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-neutral-darkest mb-4">
+                <h2
+                  className="text-3xl md:text-4xl font-bold text-neutral-darkest mb-4"
+                  style={{ color: "#ff623e" }}
+                >
                   Achieving High Standards
                 </h2>
                 <p className="text-neutral-dark">
@@ -157,7 +160,10 @@ const AboutPage = () => {
                 <div className="inline-block bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-medium mb-4">
                   Our Mission
                 </div>
-                <h3 className="text-2xl font-bold text-neutral-darkest mb-4">
+                <h3
+                  className="text-2xl font-bold text-neutral-darkest mb-4"
+                  style={{ color: "#ff623e" }}
+                >
                   Developing Future Leaders
                 </h3>
                 <p className="text-neutral-dark">
@@ -183,7 +189,10 @@ const AboutPage = () => {
             <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
               Our Core Values
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-darkest mb-4">
+            <h2
+              className="text-3xl md:text-4xl font-bold text-neutral-darkest mb-4"
+              style={{ color: "#ff623e" }}
+            >
               The Pillars of Our Philosophy
             </h2>
             <p className="text-neutral-dark max-w-2xl mx-auto">
@@ -194,7 +203,7 @@ const AboutPage = () => {
           </AnimatedSection>
 
           {/* Core Values Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 max-w-5xl mx-auto w-full">
             <StaggeredAnimation
               containerClass="grid grid-cols-1 md:grid-cols-2 gap-6"
               animation="fadeIn"
@@ -237,7 +246,10 @@ const AboutPage = () => {
               <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
                 Our Educational Philosophy
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-neutral-darkest mb-4">
+              <h2
+                className="text-3xl md:text-4xl font-bold text-neutral-darkest mb-4"
+                style={{ color: "#ff623e" }}
+              >
                 "Rigor, Fun Together"
               </h2>
               <p className="text-neutral-dark">
@@ -424,7 +436,10 @@ const AboutPage = () => {
             <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
               Our Leadership
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-darkest mb-4">
+            <h2
+              className="text-3xl md:text-4xl font-bold text-neutral-darkest mb-4"
+              style={{ color: "#ff623e" }}
+            >
               Meet Our Team
             </h2>
             <p className="text-neutral-dark max-w-2xl mx-auto">

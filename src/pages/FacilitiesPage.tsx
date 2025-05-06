@@ -246,7 +246,10 @@ const FacilitiesPage = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <AnimatedSection animation="slideUp">
-            <h2 className="text-3xl font-bold text-center mb-16 text-blue-900">
+            <h2
+              className="text-3xl font-bold text-center mb-16 text-blue-900"
+              style={{ color: "#ff623e" }}
+            >
               World-Class Facilities
             </h2>
           </AnimatedSection>
@@ -417,7 +420,10 @@ const FacilitiesPage = () => {
       <section className="py-20 px-4 bg-blue-50">
         <div className="container mx-auto max-w-6xl">
           <AnimatedSection animation="fadeIn">
-            <h2 className="text-3xl font-bold text-center mb-16 text-blue-900">
+            <h2
+              className="text-3xl font-bold text-center mb-16 text-blue-900"
+              style={{ color: "#ff623e" }}
+            >
               Campus Map
             </h2>
             <div className="bg-white rounded-lg shadow-lg p-6">
@@ -448,7 +454,10 @@ const FacilitiesPage = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-5xl">
           <AnimatedSection animation="slideUp">
-            <h2 className="text-3xl font-bold text-center mb-16 text-blue-900">
+            <h2
+              className="text-3xl font-bold text-center mb-16 text-blue-900"
+              style={{ color: "#ff623e" }}
+            >
               What Our Community Says
             </h2>
           </AnimatedSection>
