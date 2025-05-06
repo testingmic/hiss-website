@@ -141,7 +141,10 @@ const AboutPreview = () => {
               About Our School
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-darkest">
+            <h2
+              className="text-3xl md:text-4xl font-bold text-neutral-darkest"
+              style={{ color: "#ff623e" }}
+            >
               Providing Quality Education Since Our Foundation
             </h2>
 
@@ -231,7 +234,10 @@ const AboutPreview = () => {
         {/* Stats Section */}
         <div className="mt-24">
           <AnimatedSection animation="fadeIn" className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-darkest mb-4">
+            <h2
+              className="text-3xl md:text-4xl font-bold text-neutral-darkest mb-4"
+              style={{ color: "#ff623e" }}
+            >
               Our School in Numbers
             </h2>
             <p className="text-neutral-dark max-w-2xl mx-auto">

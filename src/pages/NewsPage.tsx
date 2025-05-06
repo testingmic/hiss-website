@@ -154,7 +154,9 @@ const NewsPage = () => {
             <div className="lg:col-span-2">
               <AnimatedSection animation="slideUp">
                 <div className="flex justify-between items-center mb-10">
-                  <h2 className="text-3xl font-bold text-blue-900">
+                  <h2 className="text-3xl font-bold text-blue-900"
+                    style={{ color: "#ff623e" }}
+                  >
                     Latest News
                   </h2>
 
@@ -282,7 +284,9 @@ const NewsPage = () => {
               <AnimatedSection animation="slideInRight" delay={0.2}>
                 {/* Upcoming Events */}
                 <div className="bg-gray-50 rounded-lg shadow-md p-6 mb-10">
-                  <h3 className="text-xl font-bold mb-6 text-blue-900">
+                  <h3 className="text-xl font-bold mb-6 text-blue-900"
+                    style={{ color: "#ff623e" }}
+                  >
                     Upcoming Events
                   </h3>
                   <StaggeredAnimation animation="fadeIn" staggerDelay={0.1}>
@@ -373,7 +377,10 @@ const NewsPage = () => {
       <section className="py-20 px-4 bg-gray-50">
         <div className="container mx-auto max-w-4xl text-center">
           <AnimatedSection animation="fadeIn">
-            <h2 className="text-3xl font-bold mb-6 text-blue-900">
+            <h2
+              className="text-3xl font-bold mb-6 text-blue-900"
+              style={{ color: "#ff623e" }}
+            >
               Join Our School Community
             </h2>
             <p className="text-xl mb-10 text-gray-700">
@@ -383,6 +390,7 @@ const NewsPage = () => {
             <a
               href="/admissions"
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300"
+              style={{ backgroundColor: "#ff623e" }}
             >
               Apply Now
             </a>

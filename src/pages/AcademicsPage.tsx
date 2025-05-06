@@ -28,7 +28,10 @@ const AcademicsPage = () => {
       <section className="py-20 px-4 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
           <AnimatedSection animation="slideUp">
-            <h2 className="text-3xl font-bold text-center mb-16 text-blue-900">
+            <h2
+              className="text-3xl font-bold text-center mb-16 text-blue-900"
+              style={{ color: "#ff623e" }}
+            >
               Our Educational Philosophy
             </h2>
           </AnimatedSection>
@@ -70,7 +73,10 @@ const AcademicsPage = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <AnimatedSection animation="slideUp">
-            <h2 className="text-3xl font-bold text-center mb-16 text-blue-900">
+            <h2
+              className="text-3xl font-bold text-center mb-16 text-blue-900"
+              style={{ color: "#ff623e" }}
+            >
               Curriculum Overview
             </h2>
           </AnimatedSection>
@@ -119,7 +125,7 @@ const AcademicsPage = () => {
             <AnimatedSection animation="fadeIn" delay={0.2}>
               <div className="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
                 <h3 className="text-2xl font-semibold mb-4 text-blue-800">
-                  Primary School (Ages 6-11)
+                  Primary (Ages 6-11)
                 </h3>
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start">
@@ -203,7 +209,10 @@ const AcademicsPage = () => {
       <section className="py-20 px-4 bg-blue-50">
         <div className="container mx-auto max-w-6xl">
           <AnimatedSection animation="slideUp">
-            <h2 className="text-3xl font-bold text-center mb-16 text-blue-900">
+            <h2
+              className="text-3xl font-bold text-center mb-16 text-blue-900"
+              style={{ color: "#ff623e" }}
+            >
               Our Teaching Approach
             </h2>
             <div className="max-w-3xl mx-auto text-center mb-16">

@@ -147,7 +147,11 @@ const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <Link to="/admissions" className="btn-primary text-sm py-2">
+          <Link
+            to="/admissions"
+            className="btn-primary text-sm py-2"
+            style={{ backgroundColor: "#ff623e" }}
+          >
             Apply Now
           </Link>
         </motion.div>

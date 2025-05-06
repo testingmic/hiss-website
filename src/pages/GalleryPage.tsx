@@ -141,7 +141,10 @@ const GalleryPage = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <AnimatedSection animation="slideUp">
-            <h2 className="text-3xl font-bold text-center mb-16 text-blue-900">
+            <h2
+              className="text-3xl font-bold text-center mb-16 text-blue-900"
+              style={{ color: "#ff623e" }}
+            >
               Explore Our School
             </h2>
           </AnimatedSection>
@@ -248,7 +251,9 @@ const GalleryPage = () => {
       <section className="py-20 px-4 bg-blue-50">
         <div className="container mx-auto max-w-4xl text-center">
           <AnimatedSection animation="fadeIn">
-            <h2 className="text-3xl font-bold mb-6 text-blue-900">
+            <h2 className="text-3xl font-bold mb-6 text-blue-900"
+              style={{ color: "#ff623e" }}
+            >
               Want to Experience Our School in Person?
             </h2>
             <p className="text-xl mb-10 text-gray-700">

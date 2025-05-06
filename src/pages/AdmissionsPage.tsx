@@ -184,7 +184,10 @@ const AdmissionsPage = () => {
       <section className="py-20">
         <div className="container-custom">
           <AnimatedSection animation="fadeIn" className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-darkest mb-4">
+            <h2
+              className="text-3xl md:text-4xl font-bold text-neutral-darkest mb-4"
+              style={{ color: "#ff623e" }}
+            >
               Admission Process
             </h2>
             <p className="text-neutral-dark max-w-2xl mx-auto">
@@ -210,7 +213,10 @@ const AdmissionsPage = () => {
                     >
                       {/* Icon */}
                       <div className="flex-shrink-0 z-10">
-                        <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center text-2xl shadow-md">
+                        <div
+                          className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center text-2xl shadow-md"
+                          style={{ backgroundColor: "#ff623e" }}
+                        >
                           {step.icon}
                         </div>
                       </div>
@@ -243,6 +249,7 @@ const AdmissionsPage = () => {
             <a
               href="#application-form"
               className="btn-primary text-lg px-8 py-4"
+              style={{ backgroundColor: "#ff623e" }}
             >
               Apply Now
             </a>
@@ -264,7 +271,7 @@ const AdmissionsPage = () => {
           </AnimatedSection>
 
           {/* Fee Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1  gap-6 max-w-5xl mx-auto w-full">
             <StaggeredAnimation
               containerClass="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
               className="h-full"
@@ -275,7 +282,10 @@ const AdmissionsPage = () => {
                   key={index}
                   className="bg-white rounded-lg shadow-soft overflow-hidden h-full"
                 >
-                  <div className="bg-primary p-6 text-white">
+                  <div
+                    className="bg-primary p-6 text-white"
+                    style={{ backgroundColor: "#ff623e" }}
+                  >
                     <h3 className="text-xl font-bold mb-1">{fee.title}</h3>
                     <p className="text-white/80 text-sm">{fee.description}</p>
                   </div>
@@ -345,7 +355,10 @@ const AdmissionsPage = () => {
       <section className="py-20">
         <div className="container-custom">
           <AnimatedSection animation="fadeIn" className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-darkest mb-4">
+            <h2
+              className="text-3xl md:text-4xl font-bold text-neutral-darkest mb-4"
+              style={{ color: "#ff623e" }}
+            >
               Frequently Asked Questions
             </h2>
             <p className="text-neutral-dark max-w-2xl mx-auto">
@@ -410,7 +423,10 @@ const AdmissionsPage = () => {
       <section id="application-form" className="py-20 bg-neutral-light">
         <div className="container-custom">
           <AnimatedSection animation="fadeIn" className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-darkest mb-4">
+            <h2
+              className="text-3xl md:text-4xl font-bold text-neutral-darkest mb-4"
+              style={{ color: "#ff623e" }}
+            >
               Apply Now
             </h2>
             <p className="text-neutral-dark max-w-2xl mx-auto">
@@ -626,6 +642,7 @@ const AdmissionsPage = () => {
                 <button
                   type="submit"
                   className="btn-primary text-lg px-12 py-4"
+                  style={{ backgroundColor: "#ff623e" }}
                 >
                   Submit Application
                 </button>

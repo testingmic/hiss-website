@@ -55,7 +55,7 @@ const ContactPage = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-16">
             <AnimatedSection animation="slideInLeft">
-              <h2 className="text-3xl font-bold mb-10 text-blue-900">
+              <h2 className="text-3xl font-bold mb-10 text-blue-900" style={{ color: "#ff623e" }}>
                 Get in Touch
               </h2>
               <StaggeredAnimation animation="fadeIn" staggerDelay={0.1}>
@@ -119,7 +119,7 @@ const ContactPage = () => {
             </AnimatedSection>
 
             <AnimatedSection animation="slideInRight" delay={0.2}>
-              <h2 className="text-3xl font-bold mb-8 text-blue-900">
+              <h2 className="text-3xl font-bold mb-8 text-blue-900" style={{ color: "#ff623e" }}>
                 Send a Message
               </h2>
               {isSubmitted ? (
@@ -252,6 +252,7 @@ const ContactPage = () => {
                   <button
                     type="submit"
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300"
+                    style={{ backgroundColor: "#ff623e" }}
                   >
                     Send Message
                   </button>
@@ -266,7 +267,10 @@ const ContactPage = () => {
       <section className="py-20 px-4 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
           <AnimatedSection animation="slideUp">
-            <h2 className="text-3xl font-bold text-center mb-16 text-blue-900">
+            <h2
+              className="text-3xl font-bold text-center mb-16 text-blue-900"
+              style={{ color: "#ff623e" }}
+            >
               Find Us
             </h2>
             <div className="w-full h-96 bg-gray-200 rounded-lg shadow-lg overflow-hidden">
@@ -285,7 +289,10 @@ const ContactPage = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <AnimatedSection animation="fadeIn">
-            <h2 className="text-3xl font-bold text-center mb-16 text-blue-900">
+            <h2
+              className="text-3xl font-bold text-center mb-16 text-blue-900"
+              style={{ color: "#ff623e" }}
+            >
               Frequently Asked Questions
             </h2>
             <div className="space-y-8">
