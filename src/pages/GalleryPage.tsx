@@ -3,6 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaImage, FaVideo, FaTimes } from "react-icons/fa";
 import AnimatedSection from "../components/common/AnimatedSection";
 import StaggeredAnimation from "../components/common/StaggeredAnimation";
+import CampusMainBuilding from "../assets/images/img1.jpeg";
+import Library from "../assets/images/ing5.jpeg";
+import Playground from "../assets/images/img4.jpeg";
+import ScienceLab from "../assets/images/img2.jpeg";
+import SportsDay from "../assets/images/img3.jpeg";
+import CulturalDay from "../assets/images/library.jpeg";
+import ArtsFacility from "../assets/images/img6.jpeg";
 
 // Mocked gallery data
 const galleryData = {
@@ -11,73 +18,73 @@ const galleryData = {
       id: 1,
       category: "campus",
       title: "Campus Main Building",
-      src: "https://placehold.co/800x600?text=Campus+Main+Building",
+      src: CampusMainBuilding,
     },
     {
       id: 2,
       category: "campus",
       title: "Library",
-      src: "https://placehold.co/800x600?text=Library",
+      src: Library,
     },
     {
       id: 3,
       category: "campus",
       title: "Playground",
-      src: "https://placehold.co/800x600?text=Playground",
+      src: Playground,
     },
     {
       id: 4,
       category: "campus",
       title: "Science Lab",
-      src: "https://placehold.co/800x600?text=Science+Lab",
+      src: ScienceLab,
     },
     {
       id: 5,
       category: "events",
       title: "Sports Day",
-      src: "https://placehold.co/800x600?text=Sports+Day",
+      src: SportsDay,
     },
     {
       id: 6,
       category: "events",
       title: "Cultural Day",
-      src: "https://placehold.co/800x600?text=Cultural+Day",
+      src: CulturalDay,
     },
     {
       id: 7,
       category: "events",
       title: "Graduation Ceremony",
-      src: "https://placehold.co/800x600?text=Graduation+Ceremony",
+      src: CulturalDay,
     },
     {
       id: 8,
       category: "classrooms",
       title: "Pre-School Classroom",
-      src: "https://placehold.co/800x600?text=Pre-School+Classroom",
+      src: CampusMainBuilding,
     },
     {
       id: 9,
       category: "classrooms",
       title: "Primary Classroom",
-      src: "https://placehold.co/800x600?text=Primary+Classroom",
+      src: CampusMainBuilding,
     },
     {
       id: 10,
       category: "classrooms",
       title: "JHS Classroom",
-      src: "https://placehold.co/800x600?text=JHS+Classroom",
+      src: CampusMainBuilding,
     },
     {
       id: 11,
       category: "activities",
       title: "Science Fair",
-      src: "https://placehold.co/800x600?text=Science+Fair",
+      src: ScienceLab,
     },
     {
       id: 12,
       category: "activities",
       title: "Art Exhibition",
-      src: "https://placehold.co/800x600?text=Art+Exhibition",
+      src: ArtsFacility,
     },
   ],
   videos: [
