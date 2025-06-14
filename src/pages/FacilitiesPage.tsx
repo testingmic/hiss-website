@@ -12,6 +12,13 @@ import {
 import AnimatedSection from "../components/common/AnimatedSection";
 import StaggeredAnimation from "../components/common/StaggeredAnimation";
 
+import AcademicBuilding from "../assets/images/img1.jpeg";
+import ScienceLab from "../assets/images/img2.jpeg";
+import TechLab from "../assets/images/img3.jpeg";
+import SportsFacility from "../assets/images/img4.jpeg";
+import Library from "../assets/images/ing5.jpeg";
+import ArtsFacility from "../assets/images/img6.jpeg";
+
 // Facility Types
 const facilityTypes = [
   { id: "academic", icon: <FaBuilding />, label: "Academic Buildings" },
@@ -30,7 +37,7 @@ const facilityDetails = {
       name: "Main Academic Building",
       description:
         "Our state-of-the-art main academic building houses modern classrooms equipped with the latest educational technology.",
-      image: "https://placehold.co/800x600?text=Main+Academic+Building",
+      image: AcademicBuilding,
       features: [
         "24 Spacious Classrooms",
         "Digital Whiteboards",
@@ -44,7 +51,7 @@ const facilityDetails = {
       name: "Early Childhood Center",
       description:
         "A purpose-built facility designed specifically for our youngest learners with age-appropriate learning spaces.",
-      image: "https://placehold.co/800x600?text=Early+Childhood+Center",
+      image: AcademicBuilding,
       features: [
         "Child-Friendly Design",
         "Interactive Learning Areas",
@@ -58,7 +65,7 @@ const facilityDetails = {
       name: "Junior High Building",
       description:
         "A dedicated building for our JHS students with specialized classrooms and collaborative spaces.",
-      image: "https://placehold.co/800x600?text=Junior+High+Building",
+      image: AcademicBuilding,
       features: [
         "Subject-Specific Classrooms",
         "Group Study Areas",
@@ -74,7 +81,7 @@ const facilityDetails = {
       name: "Science Laboratories",
       description:
         "Fully-equipped laboratories for physics, chemistry, and biology experiments and research.",
-      image: "https://placehold.co/800x600?text=Science+Laboratories",
+      image: ScienceLab,
       features: [
         "Physics Lab",
         "Chemistry Lab",
@@ -88,7 +95,7 @@ const facilityDetails = {
       name: "Environmental Science Garden",
       description:
         "An outdoor learning space where students can study plants, ecosystems, and sustainable practices.",
-      image: "https://placehold.co/800x600?text=Environmental+Science+Garden",
+      image: ScienceLab,
       features: [
         "Vegetable Garden",
         "Weather Station",
@@ -104,7 +111,7 @@ const facilityDetails = {
       name: "Computer Labs",
       description:
         "Modern computer laboratories equipped with the latest hardware and software for technology education.",
-      image: "https://placehold.co/800x600?text=Computer+Labs",
+      image: TechLab,
       features: [
         "50+ Workstations",
         "High-Speed Internet",
@@ -118,7 +125,7 @@ const facilityDetails = {
       name: "Digital Media Studio",
       description:
         "A creative space for students to explore digital art, animation, and multimedia production.",
-      image: "https://placehold.co/800x600?text=Digital+Media+Studio",
+      image: TechLab,
       features: [
         "Video Editing Suite",
         "Audio Recording Booth",
@@ -134,7 +141,7 @@ const facilityDetails = {
       name: "Sports Complex",
       description:
         "A comprehensive sports facility supporting various athletic activities and physical education.",
-      image: "https://placehold.co/800x600?text=Sports+Complex",
+      image: SportsFacility,
       features: [
         "Football Field",
         "Basketball Court",
@@ -148,7 +155,7 @@ const facilityDetails = {
       name: "Swimming Pool",
       description:
         "A temperature-controlled swimming pool for swimming lessons and recreational activities.",
-      image: "https://placehold.co/800x600?text=Swimming+Pool",
+      image: SportsFacility,
       features: [
         "25-Meter Pool",
         "Shallow Learning Area",
@@ -164,7 +171,7 @@ const facilityDetails = {
       name: "Main Library",
       description:
         "Our central library houses a vast collection of books, periodicals, and digital resources.",
-      image: "https://placehold.co/800x600?text=Main+Library",
+      image: Library,
       features: [
         "20,000+ Books",
         "Digital Catalog",
@@ -178,7 +185,7 @@ const facilityDetails = {
       name: "Early Readers' Library",
       description:
         "A specialized library for younger students with age-appropriate books and interactive reading areas.",
-      image: "https://placehold.co/800x600?text=Early+Readers+Library",
+      image: Library,
       features: [
         "Picture Books",
         "Reading Circles",
@@ -194,7 +201,7 @@ const facilityDetails = {
       name: "Performing Arts Center",
       description:
         "A dedicated facility for music, dance, and drama performances and instruction.",
-      image: "https://placehold.co/800x600?text=Performing+Arts+Center",
+      image: ArtsFacility,
       features: [
         "250-Seat Auditorium",
         "Music Practice Rooms",
@@ -208,7 +215,7 @@ const facilityDetails = {
       name: "Visual Arts Studio",
       description:
         "A bright, spacious studio for painting, drawing, sculpture, and other visual arts.",
-      image: "https://placehold.co/800x600?text=Visual+Arts+Studio",
+      image: ArtsFacility,
       features: [
         "Painting Area",
         "Pottery Wheels",
@@ -222,7 +229,7 @@ const facilityDetails = {
 
 const FacilitiesPage = () => {
   const [selectedType, setSelectedType] = useState<string>("academic");
-  const [selectedFacility, setSelectedFacility] = useState<number | null>(null);
+  const [selectedFacility, setSelectedFacility] = useState<number | null>(1);
 
   const facilities =
     facilityDetails[selectedType as keyof typeof facilityDetails] || [];
@@ -260,7 +267,14 @@ const FacilitiesPage = () => {
               {facilityTypes.map((type) => (
                 <button
                   key={type.id}
-                  onClick={() => setSelectedType(type.id)}
+                  onClick={() => {
+                    setSelectedType(type.id);
+                    setSelectedFacility(
+                      facilityDetails[
+                        type.id as keyof typeof facilityDetails
+                      ][0].id
+                    );
+                  }}
                   className={`flex flex-col items-center p-4 rounded-lg transition-all duration-300 ${
                     selectedType === type.id
                       ? "bg-blue-600 text-white shadow-lg"
@@ -429,9 +443,15 @@ const FacilitiesPage = () => {
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
                 {/* In a real implementation, this would be an interactive campus map */}
-                <p className="text-gray-700 text-lg font-semibold">
-                  Interactive Campus Map
-                </p>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.9500000000003!2d-0.18150000000000002!3d5.5540000000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf92024f477791%3A0x2d40da2ad8321e46!2sHigh%20International%20Standard%20School!5e0!3m2!1sen!2sgh!4v1718432400000!5m2!1sen!2sgh"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
               <div className="mt-6 text-center">
                 <p className="text-gray-700 mb-4">
