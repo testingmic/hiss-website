@@ -6,6 +6,7 @@ import {
 } from "react-icons/fa";
 import AnimatedSection from "../components/common/AnimatedSection";
 import StaggeredAnimation from "../components/common/StaggeredAnimation";
+import TeachingApproach from "../assets/images/ing5.jpeg";
 
 const AcademicsPage = () => {
   return (
@@ -298,7 +299,7 @@ const AcademicsPage = () => {
 
             <AnimatedSection animation="slideInRight" delay={0.3}>
               <img
-                src="/src/assets/images/teaching-approach.jpg"
+                src={TeachingApproach}
                 alt="Students in classroom"
                 className="rounded-lg shadow-xl object-cover w-full h-full"
                 onError={(e) => {
