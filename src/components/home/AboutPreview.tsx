@@ -11,6 +11,8 @@ import {
 } from "react-icons/fa";
 import AnimatedSection from "../common/AnimatedSection";
 
+import SchoolBuilding from "../../assets/images/school_building.jpeg";
+
 const CounterAnimation = ({
   end,
   duration = 2,
@@ -84,11 +86,11 @@ const AboutPreview = () => {
             <div className="relative">
               <div className="rounded-lg overflow-hidden shadow-medium">
                 {/* This would be replaced with an actual image */}
-                <div className="w-full h-[500px] bg-neutral-light flex items-center justify-center">
-                  <span className="text-neutral-dark text-lg">
-                    School Building Image
-                  </span>
-                </div>
+                <img
+                  src={SchoolBuilding}
+                  alt="School Building"
+                  className="w-full h-[500px] object-cover"
+                />
               </div>
 
               {/* Floating Card 1 */}
