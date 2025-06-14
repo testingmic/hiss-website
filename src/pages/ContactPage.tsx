@@ -55,7 +55,10 @@ const ContactPage = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-16">
             <AnimatedSection animation="slideInLeft">
-              <h2 className="text-3xl font-bold mb-10 text-blue-900" style={{ color: "#ff623e" }}>
+              <h2
+                className="text-3xl font-bold mb-10 text-blue-900"
+                style={{ color: "#ff623e" }}
+              >
                 Get in Touch
               </h2>
               <StaggeredAnimation animation="fadeIn" staggerDelay={0.1}>
@@ -119,7 +122,10 @@ const ContactPage = () => {
             </AnimatedSection>
 
             <AnimatedSection animation="slideInRight" delay={0.2}>
-              <h2 className="text-3xl font-bold mb-8 text-blue-900" style={{ color: "#ff623e" }}>
+              <h2
+                className="text-3xl font-bold mb-8 text-blue-900"
+                style={{ color: "#ff623e" }}
+              >
                 Send a Message
               </h2>
               {isSubmitted ? (
@@ -276,9 +282,15 @@ const ContactPage = () => {
             <div className="w-full h-96 bg-gray-200 rounded-lg shadow-lg overflow-hidden">
               {/* In a real implementation, replace this with an actual Google Maps embed */}
               <div className="w-full h-full flex items-center justify-center bg-blue-100">
-                <p className="text-blue-900 text-lg font-semibold">
-                  Interactive Map of HISS would be displayed here
-                </p>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.9500000000003!2d-0.18150000000000002!3d5.5540000000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf92024f477791%3A0x2d40da2ad8321e46!2sHigh%20International%20Standard%20School!5e0!3m2!1sen!2sgh!4v1718432400000!5m2!1sen!2sgh"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </div>
           </AnimatedSection>

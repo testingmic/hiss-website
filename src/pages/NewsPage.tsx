@@ -10,6 +10,11 @@ import {
 import AnimatedSection from "../components/common/AnimatedSection";
 import StaggeredAnimation from "../components/common/StaggeredAnimation";
 
+import ScienceCompetition from "../assets/images/img1.jpeg";
+import ArtsCenter from "../assets/images/ing5.jpeg";
+import CulturalDiversity from "../assets/images/library.jpeg";
+import ExamResults from "../assets/images/img2.jpeg";
+
 // Sample news data
 const newsArticles = [
   {
@@ -23,7 +28,7 @@ const newsArticles = [
     date: "June 12, 2023",
     readTime: "4 min read",
     category: "Academic Excellence",
-    image: "https://placehold.co/800x600?text=Science+Competition",
+    image: ScienceCompetition,
   },
   {
     id: 2,
@@ -36,7 +41,7 @@ const newsArticles = [
     date: "May 28, 2023",
     readTime: "5 min read",
     category: "Campus Development",
-    image: "https://placehold.co/800x600?text=Arts+Center",
+    image: ArtsCenter,
   },
   {
     id: 3,
@@ -49,7 +54,7 @@ const newsArticles = [
     date: "April 15, 2023",
     readTime: "6 min read",
     category: "School Events",
-    image: "https://placehold.co/800x600?text=Cultural+Diversity",
+    image: CulturalDiversity,
   },
   {
     id: 4,
@@ -62,7 +67,7 @@ const newsArticles = [
     date: "March 2, 2023",
     readTime: "4 min read",
     category: "Academic Excellence",
-    image: "https://placehold.co/800x600?text=Exam+Results",
+    image: ExamResults,
   },
 ];
 
