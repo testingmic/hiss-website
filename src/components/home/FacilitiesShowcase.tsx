@@ -11,6 +11,12 @@ import {
 } from "react-icons/fa";
 import AnimatedSection from "../common/AnimatedSection";
 
+import ClassRoom from "../../assets/images/class.jpeg";
+import ScienceLab from "../../assets/images/science.jpeg";
+import Playground from "../../assets/images/img1.jpeg";
+import Library from "../../assets/images/library.jpeg";
+import Sickbay from "../../assets/images/sick.jpeg";
+
 interface Facility {
   id: number;
   title: string;
@@ -28,7 +34,7 @@ const facilities: Facility[] = [
       "Well-furnished computer lab with high-speed internet access for digital learning and research.",
     icon: <FaLaptop className="text-3xl" />,
     color: "bg-blue-500",
-    image: "/computer-lab.jpg", // Placeholder
+    image: ClassRoom, // Placeholder
   },
   {
     id: 2,
@@ -37,7 +43,7 @@ const facilities: Facility[] = [
       "Fully equipped science laboratory for practical experiments and hands-on learning experiences.",
     icon: <FaFlask className="text-3xl" />,
     color: "bg-green-500",
-    image: "/science-lab.jpg", // Placeholder
+    image: ScienceLab, // Placeholder
   },
   {
     id: 3,
@@ -46,7 +52,7 @@ const facilities: Facility[] = [
       "Spacious playgrounds with modern equipment for sports, recreation, and physical development.",
     icon: <FaFootballBall className="text-3xl" />,
     color: "bg-orange-500",
-    image: "/playground.jpg", // Placeholder
+    image: Playground, // Placeholder
   },
   {
     id: 4,
@@ -55,7 +61,7 @@ const facilities: Facility[] = [
       "Comprehensive library with a wide selection of books, resources, and quiet study spaces.",
     icon: <FaBook className="text-3xl" />,
     color: "bg-purple-500",
-    image: "/library.jpg", // Placeholder
+    image: Library, // Placeholder
   },
   {
     id: 5,
@@ -64,7 +70,7 @@ const facilities: Facility[] = [
       "Well-equipped sickbay with trained staff to attend to medical emergencies and student health needs.",
     icon: <FaBriefcaseMedical className="text-3xl" />,
     color: "bg-red-500",
-    image: "/sickbay.jpg", // Placeholder
+    image: Sickbay, // Placeholder
   },
   {
     id: 6,
@@ -73,7 +79,7 @@ const facilities: Facility[] = [
       "Purpose-built classrooms with modern technology and multimedia contents for personalized learning.",
     icon: <FaChalkboardTeacher className="text-3xl" />,
     color: "bg-yellow-500",
-    image: "/classroom.jpg", // Placeholder
+    image: ClassRoom, // Placeholder
   },
 ];
 
@@ -103,7 +109,7 @@ const FacilitiesShowcase = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Facility Image */}
-          <div className="relative h-[500px] rounded-lg overflow-hidden shadow-medium bg-white">
+          <div className="relative h-[500px] rounded-lg overflow-hidden shadow-medium bg-white object-cover">
             <AnimatePresence mode="wait">
               {activeFacility && (
                 <motion.div
@@ -115,8 +121,14 @@ const FacilitiesShowcase = () => {
                   transition={{ duration: 0.5 }}
                 >
                   {/* This would be replaced with an actual image */}
-                  <div className="w-full h-full bg-neutral-light flex items-center justify-center">
-                    <div className="text-center p-6">
+                  <div className="w-full h-full bg-neutral-light flex items-center justify-center object-cover">
+                    <img
+                      src={activeFacility.image}
+                      alt={activeFacility.title}
+                      className="w-full h-full object-cover"
+                    />
+                    {/* glass effect */}
+                    <div className="text-center p-6 absolute bottom-0 left-0 right-0 bg-white/50 backdrop-blur-sm">
                       <div
                         className={`mx-auto w-20 h-20 ${activeFacility.color} rounded-full flex items-center justify-center text-white mb-4`}
                       >
@@ -125,7 +137,7 @@ const FacilitiesShowcase = () => {
                       <h3 className="text-2xl font-bold mb-2">
                         {activeFacility.title}
                       </h3>
-                      <p className="text-neutral-dark">
+                      <p className="text-neutral-darkest">
                         {activeFacility.description}
                       </p>
                     </div>
@@ -154,7 +166,7 @@ const FacilitiesShowcase = () => {
                     <div
                       className={`w-12 h-12 rounded-full ${
                         activeFacility?.id === facility.id
-                          ? "bg-white"
+                          ? facility.color
                           : facility.color
                       } flex items-center justify-center ${
                         activeFacility?.id === facility.id

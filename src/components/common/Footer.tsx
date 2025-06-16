@@ -12,6 +12,8 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 
+import hLogo from "../../assets/images/hlogo.jpeg";
+
 const Footer = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -47,9 +49,11 @@ const Footer = () => {
           {/* School Info */}
           <motion.div variants={itemVariants}>
             <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                <span className="text-primary font-bold text-lg">HISS</span>
-              </div>
+              <img
+                src={hLogo}
+                alt="Hiss Logo"
+                className="w-12 h-12 rounded-full"
+              />
               <div className="ml-2">
                 <h3 className="text-xl font-bold">High International</h3>
                 <p className="text-sm text-neutral-light">Standard School</p>
@@ -181,30 +185,35 @@ const Footer = () => {
             <div className="flex space-x-3 mb-6">
               <a
                 href="#"
+                title="Facebook"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors duration-300"
               >
                 <FaFacebookF />
               </a>
               <a
                 href="#"
+                title="Twitter"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors duration-300"
               >
                 <FaTwitter />
               </a>
               <a
                 href="#"
+                title="Instagram"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors duration-300"
               >
                 <FaInstagram />
               </a>
               <a
                 href="#"
+                title="Youtube"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors duration-300"
               >
                 <FaYoutube />
               </a>
               <a
                 href="#"
+                title="LinkedIn"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors duration-300"
               >
                 <FaLinkedinIn />

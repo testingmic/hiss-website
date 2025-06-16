@@ -3,6 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import AnimatedSection from "../common/AnimatedSection";
 
+import Parent1 from "../../assets/images/p1.jpg";
+import Parent2 from "../../assets/images/p2.jpg";
+import Parent3 from "../../assets/images/p3.jpg";
+import Parent4 from "../../assets/images/p4.jpg";
+
 interface Testimonial {
   id: number;
   quote: string;
@@ -18,7 +23,7 @@ const testimonials: Testimonial[] = [
       "High International Standard School has transformed my child's approach to learning. The 'rigor, fun together' philosophy really works - my daughter is challenged academically but loves going to school every day.",
     name: "Sarah Johnson",
     role: "Parent of Primary 4 Student",
-    image: "/parent1.jpg", // Placeholder
+    image: Parent1, // Placeholder
   },
   {
     id: 2,
@@ -26,7 +31,7 @@ const testimonials: Testimonial[] = [
       "The teachers at HISS are exceptional. They take the time to understand each child's learning style and provide personalized attention. My son has grown tremendously both academically and socially.",
     name: "Michael Addo",
     role: "Parent of JHS 2 Student",
-    image: "/parent2.jpg", // Placeholder
+    image: Parent2, // Placeholder
   },
   {
     id: 3,
@@ -34,7 +39,7 @@ const testimonials: Testimonial[] = [
       "As a former student, I can say that HISS prepared me incredibly well for senior high school. The problem-based learning approach taught me critical thinking skills that I use every day.",
     name: "Abena Mensah",
     role: "Former Student",
-    image: "/student1.jpg", // Placeholder
+    image: Parent3, // Placeholder
   },
   {
     id: 4,
@@ -42,7 +47,7 @@ const testimonials: Testimonial[] = [
       "HISS stands out among schools in Accra with its focus on both academic excellence and character development. The school truly lives up to its motto of 'Achieving High Standards'.",
     name: "Dr. Emmanuel Osei",
     role: "Education Consultant & Parent",
-    image: "/parent3.jpg", // Placeholder
+    image: Parent4, // Placeholder
   },
 ];
 
@@ -148,9 +153,11 @@ const TestimonialsSection = () => {
                 <div className="flex-shrink-0">
                   <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-secondary">
                     {/* This would be replaced with an actual image */}
-                    <div className="w-full h-full bg-white/20 flex items-center justify-center text-white/80">
-                      {currentTestimonial.name.charAt(0)}
-                    </div>
+                    <img
+                      src={currentTestimonial.image}
+                      alt={currentTestimonial.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
 

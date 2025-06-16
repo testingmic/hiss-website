@@ -9,6 +9,12 @@ import {
 import AnimatedSection from "../components/common/AnimatedSection";
 import StaggeredAnimation from "../components/common/StaggeredAnimation";
 
+import Mission from "../assets/images/mission.jpeg";
+import SchoolBuilding from "../assets/images/school_building.jpeg";
+import HeadOfSchool from "../assets/images/h1.jpeg";
+import DTL from "../assets/images/h2.jpeg";
+import Administrator from "../assets/images/h3.jpeg";
+
 const AboutPage = () => {
   // Core values
   const coreValues = [
@@ -108,11 +114,11 @@ const AboutPage = () => {
               <div className="relative">
                 <div className="rounded-lg overflow-hidden shadow-medium">
                   {/* This would be replaced with an actual image */}
-                  <div className="w-full h-[400px] bg-neutral-light flex items-center justify-center">
-                    <span className="text-neutral-dark text-lg">
-                      School Vision Image
-                    </span>
-                  </div>
+                  <img
+                    src={Mission}
+                    alt="Mission"
+                    className="w-full h-[400px] object-cover"
+                  />
                 </div>
 
                 {/* Quote Overlay */}
@@ -286,11 +292,11 @@ const AboutPage = () => {
             <AnimatedSection animation="slideInRight" className="relative">
               <div className="rounded-lg overflow-hidden shadow-medium">
                 {/* This would be replaced with an actual image */}
-                <div className="w-full h-[500px] bg-neutral-light flex items-center justify-center">
-                  <span className="text-neutral-dark text-lg">
-                    Students Learning Image
-                  </span>
-                </div>
+                <img
+                  src={SchoolBuilding}
+                  alt="School Building"
+                  className="w-full h-[500px] object-cover"
+                />
               </div>
             </AnimatedSection>
           </div>
@@ -454,9 +460,11 @@ const AboutPage = () => {
             <AnimatedSection animation="fadeIn" delay={0.1}>
               <div className="bg-white rounded-lg shadow-soft overflow-hidden text-center">
                 <div className="h-64 bg-neutral-light flex items-center justify-center">
-                  <span className="text-neutral-dark">
-                    Head of School Photo
-                  </span>
+                  <img
+                    src={HeadOfSchool}
+                    alt="Head of School"
+                    className="w-full h-[250px] object-cover"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-neutral-darkest mb-1">
@@ -476,7 +484,11 @@ const AboutPage = () => {
             <AnimatedSection animation="fadeIn" delay={0.2}>
               <div className="bg-white rounded-lg shadow-soft overflow-hidden text-center">
                 <div className="h-64 bg-neutral-light flex items-center justify-center">
-                  <span className="text-neutral-dark">DTL Photo</span>
+                  <img
+                    src={DTL}
+                    alt="DTL"
+                    className="w-full h-[250px] object-cover"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-neutral-darkest mb-1">
@@ -496,7 +508,11 @@ const AboutPage = () => {
             <AnimatedSection animation="fadeIn" delay={0.3}>
               <div className="bg-white rounded-lg shadow-soft overflow-hidden text-center">
                 <div className="h-64 bg-neutral-light flex items-center justify-center">
-                  <span className="text-neutral-dark">Administrator Photo</span>
+                  <img
+                    src={Administrator}
+                    alt="Administrator"
+                    className="w-full h-[250px] object-cover"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-neutral-darkest mb-1">

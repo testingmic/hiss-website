@@ -47,7 +47,7 @@ const CTASection = () => {
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <AnimatedSection
             animation="fadeIn"
             className="bg-white rounded-2xl shadow-medium overflow-hidden"

@@ -3,17 +3,21 @@ import { Link, NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 
+import hLogo from "../../assets/images/hlogo.jpeg";
+
 // This would be replaced with actual school logo
-const Logo = () => (
+const Logo = ({ isScrolled }: { isScrolled: boolean }) => (
   <div className="flex items-center">
-    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-      <span className="text-white font-bold text-lg">HISS</span>
-    </div>
+    <img src={hLogo} alt="Hiss Logo" className={`w-12 h-12 rounded-full `} />
     <div className="ml-2">
-      <h1 className="text-lg md:text-xl font-bold text-primary">
+      <h1 className="text-lg md:text-xl font-bold text-[#F0270E]">
         High International
       </h1>
-      <p className="text-xs text-primary-dark">Standard School</p>
+      <p
+        className={`text-xs ${isScrolled ? "text-primary-dark" : "text-white"}`}
+      >
+        Standard School
+      </p>
     </div>
   </div>
 );
@@ -102,7 +106,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Logo />
+            <Logo isScrolled={scrolled} />
           </motion.div>
         </Link>
 
@@ -126,10 +130,10 @@ const Navbar = () => {
                   className={({ isActive }) =>
                     `font-medium relative px-1 py-2 transition-colors duration-300 hover:text-primary-light ${
                       isActive
-                        ? "text-primary after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary"
+                        ? "text-[#F0270E] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#F0270E]"
                         : scrolled
-                        ? "text-neutral-darkest"
-                        : "text-neutral-darkest"
+                        ? "!text-neutral-darkest"
+                        : "!text-white"
                     }`
                   }
                 >
@@ -147,11 +151,7 @@ const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <Link
-            to="/admissions"
-            className="btn-primary text-sm py-2"
-            style={{ backgroundColor: "#ff623e" }}
-          >
+          <Link to="/admissions" className="btn-primary text-sm py-2">
             Apply Now
           </Link>
         </motion.div>
