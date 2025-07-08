@@ -5,7 +5,6 @@ import {
   FaUser,
   FaAngleRight,
   FaSearch,
-  FaEnvelope,
 } from "react-icons/fa";
 import AnimatedSection from "../components/common/AnimatedSection";
 import StaggeredAnimation from "../components/common/StaggeredAnimation";
@@ -114,8 +113,6 @@ const upcomingEvents = [
 const NewsPage = () => {
   const [selectedArticle, setSelectedArticle] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [email, setEmail] = useState("");
-  const [isSubscribed, setIsSubscribed] = useState(false);
 
   // Filter news articles based on search query
   const filteredArticles = searchQuery
@@ -126,15 +123,6 @@ const NewsPage = () => {
           article.category.toLowerCase().includes(searchQuery.toLowerCase())
       )
     : newsArticles;
-
-  // Handle newsletter signup
-  const handleNewsletterSignup = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Signed up with email:", email);
-    setIsSubscribed(true);
-    setEmail("");
-    setTimeout(() => setIsSubscribed(false), 5000);
-  };
 
   return (
     <div className="min-h-screen bg-white">

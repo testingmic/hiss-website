@@ -746,6 +746,8 @@ const AdmissionsPage = () => {
                   Submit Application
                 </button>
               </div>
+
+              {isSubmitted ? `` : ''}
             </form>
           </div>
         </div>
