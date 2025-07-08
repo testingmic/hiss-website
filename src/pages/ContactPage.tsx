@@ -16,6 +16,7 @@ type FormData = {
   phone: string;
   subject: string;
   message: string;
+  clientId?: string;
 };
 
 const ContactPage = () => {
@@ -28,11 +29,15 @@ const ContactPage = () => {
   } = useForm<FormData>();
 
   const onSubmit = (data: FormData) => {
-    console.log(data);
     // In a real implementation, you would send this data to your server
     setIsSubmitted(true);
     reset();
     setTimeout(() => setIsSubmitted(false), 5000);
+    data.clientId = "MSGH00001";
+    fetch("https://app.hisschoolgh.com/api/websites/contact", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
   };
 
   return (
@@ -283,7 +288,7 @@ const ContactPage = () => {
               {/* In a real implementation, replace this with an actual Google Maps embed */}
               <div className="w-full h-full flex items-center justify-center bg-blue-100">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.9500000000003!2d-0.18150000000000002!3d5.5540000000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf92024f477791%3A0x2d40da2ad8321e46!2sHigh%20International%20Standard%20School!5e0!3m2!1sen!2sgh!4v1718432400000!5m2!1sen!2sgh"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.580822111043!2d-0.0032636235299544143!3d5.773288031423423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf7f2a8acc39eb%3A0xbe16ea804fc7ee44!2sHigh%20International%20Standard%20School.!5e0!3m2!1sen!2sgh!4v1751974023377!5m2!1sen!2sgh"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

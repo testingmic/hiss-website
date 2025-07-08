@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import {
@@ -10,11 +11,41 @@ import {
 import AnimatedSection from "../components/common/AnimatedSection";
 import StaggeredAnimation from "../components/common/StaggeredAnimation";
 
+type FormData = {
+  childFirstName: string;
+  childLastName: string;
+  childGender: string;
+  applyingFor: string;
+  parentName: string;
+  relationship: string;
+  phone: string;
+  email: string;
+  address: string;
+  message: string;
+  terms: boolean;
+  clientId?: string;
+};
+
 const AdmissionsPage = () => {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const toggleAccordion = (index: number) => {
-    setActiveAccordion(activeAccordion === index ? null : index);
+  const {
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FormData>();
+
+  const onSubmit = (data: FormData) => {
+    // In a real implementation, you would send this data to your server
+    setIsSubmitted(true);
+    reset();
+    setTimeout(() => setIsSubmitted(false), 5000);
+    data.clientId = "MSGH00001";
+    fetch("https://app.hisschoolgh.com/api/websites/admission", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
   };
 
   // Admission process steps
@@ -388,7 +419,7 @@ const AdmissionsPage = () => {
                         ? "bg-primary text-white"
                         : "bg-white text-neutral-darkest"
                     }`}
-                    onClick={() => toggleAccordion(index)}
+                    onClick={() => setActiveAccordion(activeAccordion === index ? null : index)}
                   >
                     <span>{item.question}</span>
                     {activeAccordion === index ? (
@@ -437,32 +468,32 @@ const AdmissionsPage = () => {
 
           {/* Form */}
           <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-medium p-8">
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label
-                    htmlFor="child-first-name"
+                    htmlFor="childFirstName"
                     className="block text-neutral-darkest font-medium mb-2"
                   >
                     Child's First Name <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
-                    id="child-first-name"
+                    id="childFirstName"
                     className="input-field"
                     required
                   />
                 </div>
                 <div>
                   <label
-                    htmlFor="child-last-name"
+                    htmlFor="childLastName"
                     className="block text-neutral-darkest font-medium mb-2"
                   >
                     Child's Last Name <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
-                    id="child-last-name"
+                    id="childLastName"
                     className="input-field"
                     required
                   />
@@ -472,26 +503,26 @@ const AdmissionsPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
                   <label
-                    htmlFor="child-dob"
+                    htmlFor="childDob"
                     className="block text-neutral-darkest font-medium mb-2"
                   >
                     Date of Birth <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="date"
-                    id="child-dob"
+                    id="childDob"
                     className="input-field"
                     required
                   />
                 </div>
                 <div>
                   <label
-                    htmlFor="child-gender"
+                    htmlFor="childGender"
                     className="block text-neutral-darkest font-medium mb-2"
                   >
                     Gender <span className="text-red-500">*</span>
                   </label>
-                  <select id="child-gender" className="input-field" required>
+                  <select id="childGender" className="input-field" required>
                     <option value="">Select Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -499,12 +530,12 @@ const AdmissionsPage = () => {
                 </div>
                 <div>
                   <label
-                    htmlFor="applying-for"
+                    htmlFor="applyingFor"
                     className="block text-neutral-darkest font-medium mb-2"
                   >
                     Applying For <span className="text-red-500">*</span>
                   </label>
-                  <select id="applying-for" className="input-field" required>
+                  <select id="applyingFor" className="input-field" required>
                     <option value="">Select Grade</option>
                     <option value="pre-kg">Pre-Kindergarten</option>
                     <option value="kg">Kindergarten</option>
@@ -529,14 +560,14 @@ const AdmissionsPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label
-                      htmlFor="parent-name"
+                      htmlFor="parentName"
                       className="block text-neutral-darkest font-medium mb-2"
                     >
                       Full Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
-                      id="parent-name"
+                      id="parentName"
                       className="input-field"
                       required
                     />
