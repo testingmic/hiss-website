@@ -154,6 +154,12 @@ const Navbar = () => {
           <Link to="/admissions" className="btn-primary text-sm py-2">
             Apply Now
           </Link>
+          <Link
+            to="https://app.hisschoolgh.com"
+            className="btn-primary !bg-orange-500 text-sm py-2 ml-2"
+          >
+            Login
+          </Link>
         </motion.div>
 
         {/* Mobile Menu Button */}
@@ -204,6 +210,13 @@ const Navbar = () => {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Apply Now
+                </Link>
+                <Link
+                  to="https://app.hisschoolgh.com"
+                  className="block py-2 px-4 my-2 bg-orange-500 text-white font-medium rounded-md text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Login
                 </Link>
               </motion.li>
             </motion.ul>

@@ -5,7 +5,6 @@ import {
   FaUser,
   FaAngleRight,
   FaSearch,
-  FaEnvelope,
 } from "react-icons/fa";
 import AnimatedSection from "../components/common/AnimatedSection";
 import StaggeredAnimation from "../components/common/StaggeredAnimation";
@@ -114,8 +113,6 @@ const upcomingEvents = [
 const NewsPage = () => {
   const [selectedArticle, setSelectedArticle] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [email, setEmail] = useState("");
-  const [isSubscribed, setIsSubscribed] = useState(false);
 
   // Filter news articles based on search query
   const filteredArticles = searchQuery
@@ -126,15 +123,6 @@ const NewsPage = () => {
           article.category.toLowerCase().includes(searchQuery.toLowerCase())
       )
     : newsArticles;
-
-  // Handle newsletter signup
-  const handleNewsletterSignup = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Signed up with email:", email);
-    setIsSubscribed(true);
-    setEmail("");
-    setTimeout(() => setIsSubscribed(false), 5000);
-  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -323,54 +311,6 @@ const NewsPage = () => {
                   >
                     View Full Calendar
                   </a>
-                </div>
-
-                {/* Newsletter Signup */}
-                <div className="bg-blue-900 rounded-lg shadow-md p-6 text-white">
-                  <h3 className="text-xl font-bold mb-4">
-                    Subscribe to Our Newsletter
-                  </h3>
-                  <p className="mb-6">
-                    Stay updated with school news, events, and announcements
-                    delivered directly to your inbox.
-                  </p>
-
-                  {isSubscribed ? (
-                    <div className="bg-green-800 rounded-lg p-4 text-center">
-                      <p className="text-white font-semibold">
-                        Thank you for subscribing!
-                      </p>
-                      <p className="text-green-100 text-sm mt-1">
-                        You'll receive our newsletter soon.
-                      </p>
-                    </div>
-                  ) : (
-                    <form onSubmit={handleNewsletterSignup}>
-                      <div className="flex items-center mb-4">
-                        <div className="relative flex-grow">
-                          <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                          <input
-                            type="email"
-                            placeholder="Your email address"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                            className="w-full pl-10 pr-4 py-2 rounded-l-lg text-gray-800 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none"
-                          />
-                        </div>
-                        <button
-                          type="submit"
-                          className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-2 px-4 rounded-r-lg transition-colors duration-300"
-                        >
-                          Subscribe
-                        </button>
-                      </div>
-                      <p className="text-xs text-blue-100">
-                        We respect your privacy and will never share your
-                        information.
-                      </p>
-                    </form>
-                  )}
                 </div>
               </AnimatedSection>
             </div>

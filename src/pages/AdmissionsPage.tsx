@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import {
@@ -10,11 +11,57 @@ import {
 import AnimatedSection from "../components/common/AnimatedSection";
 import StaggeredAnimation from "../components/common/StaggeredAnimation";
 
+type FormData = {
+  childFirstName: string;
+  childLastName: string;
+  childDob: string;
+  childGender: string;
+  applyingFor: string;
+  parentName: string;
+  relationship: string;
+  phone: string;
+  email: string;
+  address: string;
+  message: string;
+  terms: boolean;
+  clientId?: string;
+};
+
 const AdmissionsPage = () => {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const toggleAccordion = (index: number) => {
-    setActiveAccordion(activeAccordion === index ? null : index);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FormData>();
+
+  const onSubmit = async (data: FormData) => {
+    try {
+      setIsSubmitted(true);
+      data.clientId = "MSGH00001";
+      
+      const response = await fetch("https://app.hisschoolgh.com/api/websites/admission", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        // Success
+        reset();
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        // Handle error
+        setIsSubmitted(false);
+      }
+    } catch (error) {
+      setIsSubmitted(false);
+    }
   };
 
   // Admission process steps
@@ -388,7 +435,7 @@ const AdmissionsPage = () => {
                         ? "bg-primary text-white"
                         : "bg-white text-neutral-darkest"
                     }`}
-                    onClick={() => toggleAccordion(index)}
+                    onClick={() => setActiveAccordion(activeAccordion === index ? null : index)}
                   >
                     <span>{item.question}</span>
                     {activeAccordion === index ? (
@@ -437,74 +484,94 @@ const AdmissionsPage = () => {
 
           {/* Form */}
           <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-medium p-8">
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label
-                    htmlFor="child-first-name"
+                    htmlFor="childFirstName"
                     className="block text-neutral-darkest font-medium mb-2"
                   >
                     Child's First Name <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
-                    id="child-first-name"
+                    id="childFirstName"
                     className="input-field"
-                    required
+                    {...register("childFirstName", { required: "Child's first name is required" })}
                   />
+                  {errors.childFirstName && (
+                    <p className="text-red-500 text-sm mt-1">{errors.childFirstName.message}</p>
+                  )}
                 </div>
                 <div>
                   <label
-                    htmlFor="child-last-name"
+                    htmlFor="childLastName"
                     className="block text-neutral-darkest font-medium mb-2"
                   >
                     Child's Last Name <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
-                    id="child-last-name"
+                    id="childLastName"
                     className="input-field"
-                    required
+                    {...register("childLastName", { required: "Child's last name is required" })}
                   />
+                  {errors.childLastName && (
+                    <p className="text-red-500 text-sm mt-1">{errors.childLastName.message}</p>
+                  )}
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
                   <label
-                    htmlFor="child-dob"
+                    htmlFor="childDob"
                     className="block text-neutral-darkest font-medium mb-2"
                   >
                     Date of Birth <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="date"
-                    id="child-dob"
+                    id="childDob"
                     className="input-field"
-                    required
+                    {...register("childDob", { required: "Date of birth is required" })}
                   />
+                  {errors.childDob && (
+                    <p className="text-red-500 text-sm mt-1">{errors.childDob.message}</p>
+                  )}
                 </div>
                 <div>
                   <label
-                    htmlFor="child-gender"
+                    htmlFor="childGender"
                     className="block text-neutral-darkest font-medium mb-2"
                   >
                     Gender <span className="text-red-500">*</span>
                   </label>
-                  <select id="child-gender" className="input-field" required>
+                  <select 
+                    id="childGender" 
+                    className="input-field" 
+                    {...register("childGender", { required: "Gender is required" })}
+                  >
                     <option value="">Select Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                   </select>
+                  {errors.childGender && (
+                    <p className="text-red-500 text-sm mt-1">{errors.childGender.message}</p>
+                  )}
                 </div>
                 <div>
                   <label
-                    htmlFor="applying-for"
+                    htmlFor="applyingFor"
                     className="block text-neutral-darkest font-medium mb-2"
                   >
                     Applying For <span className="text-red-500">*</span>
                   </label>
-                  <select id="applying-for" className="input-field" required>
+                  <select 
+                    id="applyingFor" 
+                    className="input-field" 
+                    {...register("applyingFor", { required: "Please select a grade" })}
+                  >
                     <option value="">Select Grade</option>
                     <option value="pre-kg">Pre-Kindergarten</option>
                     <option value="kg">Kindergarten</option>
@@ -518,6 +585,9 @@ const AdmissionsPage = () => {
                     <option value="jhs2">JHS 2</option>
                     <option value="jhs3">JHS 3</option>
                   </select>
+                  {errors.applyingFor && (
+                    <p className="text-red-500 text-sm mt-1">{errors.applyingFor.message}</p>
+                  )}
                 </div>
               </div>
 
@@ -529,17 +599,20 @@ const AdmissionsPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label
-                      htmlFor="parent-name"
+                      htmlFor="parentName"
                       className="block text-neutral-darkest font-medium mb-2"
                     >
                       Full Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
-                      id="parent-name"
+                      id="parentName"
                       className="input-field"
-                      required
+                      {...register("parentName", { required: "Parent name is required" })}
                     />
+                    {errors.parentName && (
+                      <p className="text-red-500 text-sm mt-1">{errors.parentName.message}</p>
+                    )}
                   </div>
                   <div>
                     <label
@@ -549,12 +622,19 @@ const AdmissionsPage = () => {
                       Relationship to Child{" "}
                       <span className="text-red-500">*</span>
                     </label>
-                    <select id="relationship" className="input-field" required>
+                    <select 
+                      id="relationship" 
+                      className="input-field" 
+                      {...register("relationship", { required: "Relationship is required" })}
+                    >
                       <option value="">Select Relationship</option>
                       <option value="parent">Parent</option>
                       <option value="guardian">Guardian</option>
                       <option value="other">Other</option>
                     </select>
+                    {errors.relationship && (
+                      <p className="text-red-500 text-sm mt-1">{errors.relationship.message}</p>
+                    )}
                   </div>
                 </div>
 
@@ -570,8 +650,11 @@ const AdmissionsPage = () => {
                       type="tel"
                       id="phone"
                       className="input-field"
-                      required
+                      {...register("phone", { required: "Phone number is required" })}
                     />
+                    {errors.phone && (
+                      <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
+                    )}
                   </div>
                   <div>
                     <label
@@ -584,8 +667,17 @@ const AdmissionsPage = () => {
                       type="email"
                       id="email"
                       className="input-field"
-                      required
+                      {...register("email", { 
+                        required: "Email is required",
+                        pattern: {
+                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                          message: "Invalid email address"
+                        }
+                      })}
                     />
+                    {errors.email && (
+                      <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -601,8 +693,11 @@ const AdmissionsPage = () => {
                   id="address"
                   rows={3}
                   className="input-field w-full"
-                  required
+                  {...register("address", { required: "Address is required" })}
                 />
+                {errors.address && (
+                  <p className="text-red-500 text-sm mt-1">{errors.address.message}</p>
+                )}
               </div>
 
               <div>
@@ -617,6 +712,7 @@ const AdmissionsPage = () => {
                   rows={4}
                   className="input-field w-full"
                   placeholder="Please share any additional information that you think would be helpful for us to know"
+                  {...register("message")}
                 />
               </div>
 
@@ -625,7 +721,7 @@ const AdmissionsPage = () => {
                   type="checkbox"
                   id="terms"
                   className="mt-1 mr-3"
-                  required
+                  {...register("terms", { required: "You must agree to the terms and conditions" })}
                 />
                 <label htmlFor="terms" className="text-sm text-neutral-dark">
                   I confirm that the information provided is accurate and I
@@ -636,6 +732,9 @@ const AdmissionsPage = () => {
                   </a>
                   .
                 </label>
+                {errors.terms && (
+                  <p className="text-red-500 text-sm mt-1">{errors.terms.message}</p>
+                )}
               </div>
 
               <div className="text-center">
@@ -647,6 +746,8 @@ const AdmissionsPage = () => {
                   Submit Application
                 </button>
               </div>
+
+              {isSubmitted ? `` : ''}
             </form>
           </div>
         </div>

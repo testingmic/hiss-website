@@ -11,6 +11,59 @@ import SportsDay from "../assets/images/img3.jpeg";
 import CulturalDay from "../assets/images/library.jpeg";
 import ArtsFacility from "../assets/images/img6.jpeg";
 
+// Import all gallery images
+import Gallery1 from "../assets/gallery/gallery_1.jpeg";
+import Gallery2 from "../assets/gallery/gallery_2.jpeg";
+import Gallery3 from "../assets/gallery/gallery_3.jpeg";
+import Gallery4 from "../assets/gallery/gallery_4.jpeg";
+import Gallery5 from "../assets/gallery/gallery_5.jpeg";
+import Gallery6 from "../assets/gallery/gallery_6.jpeg";
+import Gallery7 from "../assets/gallery/gallery_7.jpeg";
+import Gallery8 from "../assets/gallery/gallery_8.jpeg";
+import Gallery9 from "../assets/gallery/gallery_9.jpeg";
+import Gallery10 from "../assets/gallery/gallery_10.jpeg";
+import Gallery11 from "../assets/gallery/gallery_11.jpeg";
+import Gallery12 from "../assets/gallery/gallery_12.jpeg";
+import Gallery13 from "../assets/gallery/gallery_13.jpeg";
+import Gallery14 from "../assets/gallery/gallery_14.jpeg";
+import Gallery15 from "../assets/gallery/gallery_15.jpeg";
+import Gallery16 from "../assets/gallery/gallery_16.jpeg";
+import Gallery17 from "../assets/gallery/gallery_17.jpeg";
+import Gallery18 from "../assets/gallery/gallery_18.jpeg";
+import Gallery19 from "../assets/gallery/gallery_19.jpeg";
+import Gallery20 from "../assets/gallery/gallery_20.jpeg";
+import Gallery21 from "../assets/gallery/gallery_21.jpeg";
+import Gallery22 from "../assets/gallery/gallery_22.jpeg";
+import Gallery23 from "../assets/gallery/gallery_23.jpeg";
+import Gallery24 from "../assets/gallery/gallery_24.jpeg";
+import Gallery25 from "../assets/gallery/gallery_25.jpeg";
+import Gallery26 from "../assets/gallery/gallery_26.jpeg";
+import Gallery27 from "../assets/gallery/gallery_27.jpeg";
+import Gallery28 from "../assets/gallery/gallery_28.jpeg";
+import Gallery29 from "../assets/gallery/gallery_29.jpeg";
+import Gallery30 from "../assets/gallery/gallery_30.jpeg";
+import Gallery31 from "../assets/gallery/gallery_31.jpeg";
+import Gallery32 from "../assets/gallery/gallery_32.jpeg";
+import Gallery33 from "../assets/gallery/gallery_33.jpeg";
+import Gallery34 from "../assets/gallery/gallery_34.jpeg";
+import Gallery35 from "../assets/gallery/gallery_35.jpeg";
+
+// Define types for gallery items
+interface GalleryPhoto {
+  id: number;
+  category: string;
+  title: string;
+  src: string;
+}
+
+interface GalleryVideo {
+  id: number;
+  category: string;
+  title: string;
+  thumbnail: string;
+  videoUrl: string;
+}
+
 // Mocked gallery data
 const galleryData = {
   photos: [
@@ -86,25 +139,223 @@ const galleryData = {
       title: "Art Exhibition",
       src: ArtsFacility,
     },
-  ],
-  videos: [
+    // Add gallery images
     {
-      id: 101,
-      category: "campus",
-      title: "Campus Tour",
-      thumbnail: "https://placehold.co/800x600?text=Campus+Tour+Video",
+      id: 13,
+      category: "gallery",
+      title: "School Gallery - Image 1",
+      src: Gallery1,
     },
     {
-      id: 102,
-      category: "events",
-      title: "Annual Day Celebration",
-      thumbnail: "https://placehold.co/800x600?text=Annual+Day+Video",
+      id: 14,
+      category: "gallery",
+      title: "School Gallery - Image 2",
+      src: Gallery2,
     },
-  ],
+    {
+      id: 15,
+      category: "gallery",
+      title: "School Gallery - Image 3",
+      src: Gallery3,
+    },
+    {
+      id: 16,
+      category: "gallery",
+      title: "School Gallery - Image 4",
+      src: Gallery4,
+    },
+    {
+      id: 17,
+      category: "gallery",
+      title: "School Gallery - Image 5",
+      src: Gallery5,
+    },
+    {
+      id: 18,
+      category: "gallery",
+      title: "School Gallery - Image 6",
+      src: Gallery6,
+    },
+    {
+      id: 19,
+      category: "gallery",
+      title: "School Gallery - Image 7",
+      src: Gallery7,
+    },
+    {
+      id: 20,
+      category: "gallery",
+      title: "School Gallery - Image 8",
+      src: Gallery8,
+    },
+    {
+      id: 21,
+      category: "gallery",
+      title: "School Gallery - Image 9",
+      src: Gallery9,
+    },
+    {
+      id: 22,
+      category: "gallery",
+      title: "School Gallery - Image 10",
+      src: Gallery10,
+    },
+    {
+      id: 23,
+      category: "gallery",
+      title: "School Gallery - Image 11",
+      src: Gallery11,
+    },
+    {
+      id: 24,
+      category: "gallery",
+      title: "School Gallery - Image 12",
+      src: Gallery12,
+    },
+    {
+      id: 25,
+      category: "gallery",
+      title: "School Gallery - Image 13",
+      src: Gallery13,
+    },
+    {
+      id: 26,
+      category: "gallery",
+      title: "School Gallery - Image 14",
+      src: Gallery14,
+    },
+    {
+      id: 27,
+      category: "gallery",
+      title: "School Gallery - Image 15",
+      src: Gallery15,
+    },
+    {
+      id: 28,
+      category: "gallery",
+      title: "School Gallery - Image 16",
+      src: Gallery16,
+    },
+    {
+      id: 29,
+      category: "gallery",
+      title: "School Gallery - Image 17",
+      src: Gallery17,
+    },
+    {
+      id: 30,
+      category: "gallery",
+      title: "School Gallery - Image 18",
+      src: Gallery18,
+    },
+    {
+      id: 31,
+      category: "gallery",
+      title: "School Gallery - Image 19",
+      src: Gallery19,
+    },
+    {
+      id: 32,
+      category: "gallery",
+      title: "School Gallery - Image 20",
+      src: Gallery20,
+    },
+    {
+      id: 33,
+      category: "gallery",
+      title: "School Gallery - Image 21",
+      src: Gallery21,
+    },
+    {
+      id: 34,
+      category: "gallery",
+      title: "School Gallery - Image 22",
+      src: Gallery22,
+    },
+    {
+      id: 35,
+      category: "gallery",
+      title: "School Gallery - Image 23",
+      src: Gallery23,
+    },
+    {
+      id: 36,
+      category: "gallery",
+      title: "School Gallery - Image 24",
+      src: Gallery24,
+    },
+    {
+      id: 37,
+      category: "gallery",
+      title: "School Gallery - Image 25",
+      src: Gallery25,
+    },
+    {
+      id: 38,
+      category: "gallery",
+      title: "School Gallery - Image 26",
+      src: Gallery26,
+    },
+    {
+      id: 39,
+      category: "gallery",
+      title: "School Gallery - Image 27",
+      src: Gallery27,
+    },
+    {
+      id: 40,
+      category: "gallery",
+      title: "School Gallery - Image 28",
+      src: Gallery28,
+    },
+    {
+      id: 41,
+      category: "gallery",
+      title: "School Gallery - Image 29",
+      src: Gallery29,
+    },
+    {
+      id: 42,
+      category: "gallery",
+      title: "School Gallery - Image 30",
+      src: Gallery30,
+    },
+    {
+      id: 43,
+      category: "gallery",
+      title: "School Gallery - Image 31",
+      src: Gallery31,
+    },
+    {
+      id: 44,
+      category: "gallery",
+      title: "School Gallery - Image 32",
+      src: Gallery32,
+    },
+    {
+      id: 45,
+      category: "gallery",
+      title: "School Gallery - Image 33",
+      src: Gallery33,
+    },
+    {
+      id: 46,
+      category: "gallery",
+      title: "School Gallery - Image 34",
+      src: Gallery34,
+    },
+    {
+      id: 47,
+      category: "gallery",
+      title: "School Gallery - Image 35",
+      src: Gallery35,
+    },
+  ] as GalleryPhoto[],
+  videos: [] as GalleryVideo[],
 };
 
 // Gallery categories
-const categories = ["all", "campus", "events", "classrooms", "activities"];
+const categories = ["all", "campus", "events", "classrooms", "activities", "gallery"];
 
 const GalleryPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -126,7 +377,7 @@ const GalleryPage = () => {
     selectedCategory === "all"
       ? galleryData.videos
       : galleryData.videos.filter(
-          (video) => video.category === selectedCategory
+          (video: any) => video?.category === selectedCategory
         );
 
   return (
@@ -214,9 +465,9 @@ const GalleryPage = () => {
                 </motion.div>
               ))}
 
-              {filteredVideos.map((video) => (
+              {filteredVideos.map((video: any) => (
                 <motion.div
-                  key={video.id}
+                  key={video?.id}
                   layout
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
