@@ -9,7 +9,7 @@ import {
 import AnimatedSection from "../components/common/AnimatedSection";
 import StaggeredAnimation from "../components/common/StaggeredAnimation";
 
-import Mission from "../assets/images/mission.jpeg";
+import Mission from "../assets/gallery/gallery_34.jpeg";
 import SchoolBuilding from "../assets/images/school_building.jpeg";
 import HeadOfSchool from "../assets/images/h1.jpeg";
 import DTL from "../assets/images/h2.jpeg";

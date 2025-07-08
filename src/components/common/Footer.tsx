@@ -219,23 +219,6 @@ const Footer = () => {
                 <FaLinkedinIn />
               </a>
             </div>
-
-            <h4 className="text-lg font-semibold mb-3">
-              Subscribe to Our Newsletter
-            </h4>
-            <form className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="px-4 py-2 rounded-md bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-secondary"
-              />
-              <button
-                type="submit"
-                className="px-4 py-2 bg-secondary text-white rounded-md hover:bg-secondary-dark transition-colors duration-300"
-              >
-                Subscribe
-              </button>
-            </form>
           </motion.div>
         </div>
 
