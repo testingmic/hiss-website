@@ -88,18 +88,6 @@ const galleryData = {
     },
   ],
   videos: [
-    {
-      id: 101,
-      category: "campus",
-      title: "Campus Tour",
-      thumbnail: "https://placehold.co/800x600?text=Campus+Tour+Video",
-    },
-    {
-      id: 102,
-      category: "events",
-      title: "Annual Day Celebration",
-      thumbnail: "https://placehold.co/800x600?text=Annual+Day+Video",
-    },
   ],
 };
 
